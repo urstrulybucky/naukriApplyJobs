@@ -33,7 +33,7 @@ def apply_jobs(job_list):
     headers = {
     'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
     'sec-ch-ua-mobile': '?0',
-    'authorization': 'ACCESSTOKEN = eyJraWQiOiIxIiwidHlwIjoiSldUIiwiYWxnIjoiUlM1MTIifQ.eyJ1ZF9yZXNJZCI6MTIwOTE0MjEzLCJzdWIiOiIxMjk1NjEzOTUiLCJ1ZF91c2VybmFtZSI6ImhpbWFuc2h1Lm5pbmphN0BnbWFpbC5jb20iLCJ1ZF9pc0VtYWlsIjp0cnVlLCJpc3MiOiJJbmZvRWRnZSBJbmRpYSBQdnQuIEx0ZC4iLCJ1c2VyQWdlbnQiOiJNb3ppbGxhLzUuMCAoWDExOyBMaW51eCB4ODZfNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMjQuMC4wLjAgU2FmYXJpLzUzNy4zNiIsImlwQWRyZXNzIjoiMTAzLjYuMTU5Ljg3IiwidWRfaXNUZWNoT3BzTG9naW4iOmZhbHNlLCJ1c2VySWQiOjEyOTU2MTM5NSwic3ViVXNlclR5cGUiOiJqb2JzZWVrZXIiLCJ1c2VyU3RhdGUiOiJBVVRIRU5USUNBVEVEIiwidWRfZW1haWxWZXJpZmllZCI6dHJ1ZSwidWRfaXNQYWlkQ2xpZW50IjpmYWxzZSwidXNlclR5cGUiOiJqb2JzZWVrZXIiLCJzZXNzaW9uU3RhdFRpbWUiOiIyMDI0LTA0LTIwVDEwOjM4OjM1IiwidWRfZW1haWwiOiJoaW1hbnNodS5uaW5qYTdAZ21haWwuY29tIiwidXNlclJvbGUiOiJ1c2VyIiwiZXhwIjoxNzEzNjE0OTEzLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTcxMzYxMTMxMywianRpIjoiYTQyMGU3MWQwZDhhNGZmMWI4ZmY5YzY4MDQ3OTg5ZTcifQ.hRu6ka2gxwMI-kpjnazVr2KTaR2TfwWfML8YXAmPDzeGZM3JeN0H-K4RSsO7vJ66bOuI1a0xLGEnFMb2bbwUrNZntxBbzrg_KID82fJIlptCV5RyIM0z8M1wM8VL4MGV0pbD20CndDbie_qpQiUsAejt3dGCsPyZOH5GT_1JRbTqQTZbzSwbBrwnnrWF3XUQzxJlwS3JSoqDeaxFVekWbs9QJFTYXAhhgC7CC-hiwvD2YJNA712XMQOYLSDrhwCstVSPx7mAmgMtTjME2At8YA5V5O-3vyCuUzXSxCz_d1jeKBDvx7zL2TMqdCQ7cLKCCQBIWKrtniNnZDYw0MBKeA',
+    'authorization': 'ACCESSTOKEN = eyJraWQiOiIxIiwidHlwIjoiSldUIiwiYWxnIjoiUlM1MTIifQ.eyJkZXZpY2VUeXBlIjoiZDNza3QwcCIsInVkX3Jlc0lkIjoxMjA5MTQyMTMsInN1YiI6IjEyOTU2MTM5NSIsInVkX3VzZXJuYW1lIjoiaGltYW5zaHUubmluamE3QGdtYWlsLmNvbSIsInVkX2lzRW1haWwiOnRydWUsImlzcyI6IkluZm9FZGdlIEluZGlhIFB2dC4gTHRkLiIsInVzZXJBZ2VudCI6Ik1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMTYuMC4wLjAgU2FmYXJpLzUzNy4zNiIsImlwQWRyZXNzIjoiMTAuMjQzLjE3Ni42NCIsInVkX2lzVGVjaE9wc0xvZ2luIjpmYWxzZSwidXNlcklkIjoxMjk1NjEzOTUsInN1YlVzZXJUeXBlIjoiam9ic2Vla2VyIiwidXNlclN0YXRlIjoiQVVUSEVOVElDQVRFRCIsInVkX2VtYWlsVmVyaWZpZWQiOnRydWUsInVkX2lzUGFpZENsaWVudCI6ZmFsc2UsInVzZXJUeXBlIjoiam9ic2Vla2VyIiwic2Vzc2lvblN0YXRUaW1lIjoiMjAyMy0wOC0zMVQxNjoyMDo1NyIsInVkX2VtYWlsIjoiaGltYW5zaHUubmluamE3QGdtYWlsLmNvbSIsInVzZXJSb2xlIjoidXNlciIsImV4cCI6MTcxNTU3MTM1MSwidG9rZW5UeXBlIjoiYWNjZXNzVG9rZW4iLCJpYXQiOjE3MTU1Njc3NTEsImp0aSI6IjMwM2MyY2Y1NjQxMjQ3NTNhNDZkMTVhMGJmYWMxM2NjIn0.Q8HzZy6kWc3KIQ4EgKmnnaQoXp6tgy98yUVj8RHC9A-g4KfQwTuvhIQdtcI2vzqDeCg1j88epUnQWjyyMUsyjKT-W5Yb83jlocYdIH4KLVYy9WUaME6oFuo4iKTj29WbiPSHVwDmzLs9VvvOMO14SPnNNdwZGPkZKoYgUqY_UkEfzwjx8J9wl70LdwtgBYBndxxBCvd9ecwhgdzNr2a-S8IeS6kpHtredQgH7JTgefL1ac5cC9AGSAoa_ARlcQ0vtwQpJQMyYXYIvQFjOhfWqa7QB9n6ENEcEjALJ6slxtgb13f6S77vBO_1dTKZ0U0071fhw2DwdoyJSaVZp-26Rw',
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
     'systemid': 'jobseeker',
     'Content-Type': 'application/json',
@@ -90,4 +90,66 @@ def get_job_list():
     return job_id_list
 
 
-get_job_list()
+def recom_jobs():
+
+    url = "https://www.naukri.com/jobapi/v2/search/recom-jobs"
+
+    payload = json.dumps({
+    "clusterId": None,
+    "src": "recommClusterApi",
+    "clusterSplitDate": {
+        "apply": "2024-08-05 11:46:44",
+        "preference": "1980-01-01 05:30:00",
+        "profile": "1980-01-01 05:30:00",
+        "similar_jobs": "2024-08-05 11:46:48"
+    },
+    "searches": [
+        {
+        "keywords": "tech support",
+        "location": ""
+        },
+        {
+        "keywords": "python software developer",
+        "location": ""
+        }
+    ]
+    })
+    headers = {
+    'authority': 'www.naukri.com',
+    'accept': 'application/json',
+    'accept-language': 'en-US,en;q=0.9',
+    'appid': '105',
+    'cache-control': 'no-cache, no-store, must-revalidate',
+    'content-type': 'application/json',
+    'cookie': '_t_s=direct; _t_ds=3904aa11693479034-303904aa1-03904aa1; _t_us=18A655EFCD5; test=naukri.com; nauk_rt=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJkZXZpY2VUeXBlIjoiZDNza3QwcCIsInVkX3Jlc0lkIjoxMjA5MTQyMTMsInN1YiI6IjEyOTU2MTM5NSIsInVkX3VzZXJuYW1lIjoiaGltYW5zaHUubmluamE3QGdtYWlsLmNvbSIsInVkX2lzRW1haWwiOnRydWUsImlzcyI6IkluZm9FZGdlIEluZGlhIFB2dC4gTHRkLiIsInVzZXJBZ2VudCI6Ik1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMTYuMC4wLjAgU2FmYXJpLzUzNy4zNiIsImlwQWRyZXNzIjoiMTAuMjQzLjE3Ni42NCIsInVkX2lzVGVjaE9wc0xvZ2luIjpmYWxzZSwidXNlcklkIjoxMjk1NjEzOTUsInVzZXJTdGF0ZSI6IkFVVEhFTlRJQ0FURUQiLCJ1ZF9pc1BhaWRDbGllbnQiOmZhbHNlLCJ1ZF9lbWFpbFZlcmlmaWVkIjp0cnVlLCJ1c2VyVHlwZSI6ImpvYnNlZWtlciIsInNlc3Npb25TdGF0VGltZSI6IjIwMjMtMDgtMzFUMTY6MjA6NTciLCJ1ZF9lbWFpbCI6ImhpbWFuc2h1Lm5pbmphN0BnbWFpbC5jb20iLCJ1c2VyUm9sZSI6InVzZXIiLCJleHAiOjE3MjUwMTUwNTcsInRva2VuVHlwZSI6InJlZnJlc2hUb2tlbiIsImlhdCI6MTY5MzQ3OTA1NywianRpIjoiMzAzYzJjZjU2NDEyNDc1M2E0NmQxNWEwYmZhYzEzY2MifQ.bXeC5CPyTm8FsqPo4dqSZsArtEgukQ1SKsjfSQ4wDHVbQuUPA0WK9DYOekKpjtRlE-HQRtGa6xkqQla10s7KC4m69PoAYQna1lB4xtvKpBqk9pgMQkegmAIBG8y_v4g7V5S1P1GzGFANJZtDfToTVFgcuTluHO_DBv2uPsHXiIWNEj0eU9sGD4yRRssKdDTfIrI0PQPa6fiRsf9lO86TvutOEcswsxF7xYX_2VLkaWcjBDxSW3r6NZ6-rAj0Kr21Zp4c6XG26FkwN8801b4Ef_PwhbJH6cYhhEpj3l4tJEYkgY_BKlH3qtvRDa_qBG1r4nVnwtxulGQV8RppBiSzvA; nauk_sid=303c2cf564124753a46d15a0bfac13cc; nauk_otl=303c2cf564124753a46d15a0bfac13cc; NKWAP=2b44fc7cc22605c8e28990168a4b59ba5ee641aa56500b2fc3f44683ac4836269a86cc384cde9c370d99ad6a3af22255~2b44fc7cc22605c8e28990168a4b59ba5ee641aa56500b2fc3f44683ac4836269a86cc384cde9c370d99ad6a3af22255~1~0; MYNAUKRI[UNID]=102fd0404742cdbc73; _cc_id=fd2492d71e451fae1ed43565ae1d63dd; PS=2b44fc7cc22605c8e28990168a4b59ba5ee641aa56500b2fc3f44683ac4836269a86cc384cde9c370d99ad6a3af22255; G_ENABLED_IDPS=google; __utmc=266160400; _t_ds=1eb666681695196895-251eb66668-01eb66668; PHPSESSID=g075ep83a4ht5f5d9qou24vgj2; cto_bundle=IYE-R181cU1kM29zcVZyZEExcUtrdXVYclJINWV1RHpmallaQXNCTVdsYTBPRlglMkJXa3NvWTFMN0hxdnRmSEdPbVg0SEY3SUwyNmFEcFZKeHpmUkNYUk5ONVRIdDEyWVVESW5qT0ZTMGtqNHM4b2lmTDd1UE1naEJKQkltVDIlMkZZQyUyQnlCbGhUdiUyQkV4dTNGbkszSEJ3byUyQmN4Qmh3JTNEJTNE; _abck=AACDCB01DDFE1EFCCCC46A0E479BDB35~0~YAAQXEYDF05bzLaKAQAAK7t4uwoPFOD+EbwAb2Ajcs4NIOkCNnMf1ZtaoB/0tjv90B2JT0EbwUNhW9qhem8bZA1HJ4HMZzEMFNoXp8nsD5454RUjG8qNt+cYf4lrEKggRTdJ/M2y82lxScRd7U3eOQK46RLH+2Qapcbr6cRId70RJSTLkJwoTbx3NRLnXet1iVqbriL1qukR74jmlY6vLUg/GT7Ptsx9Y5TpoTxbvTMJfZCG6xykpAmLpXI/r1yA3Gi2sngUy3gCmv5UVCq2HRSL1+Br5tQuu3MwGlgzkLWScD07fVJXcG6XNC+jpCBDrnJYL994NoZkDpj8rnzHfuLf8klicF62860IeUJL/MEZFvJQfjIrHhXR8Op3hbXUUcN6tipjJdG6EV02CzIM3A5QtHjq+J3D~-1~-1~-1; failLoginCount=0; _ga=GA1.1.1792950486.1693479038; __utmz=266160400.1715142163.32.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); J=0; nauk_ps=default; _gcl_au=1.1.1016949448.1715142169; bm_mi=D3ECB4A2E8E427211F83305755A33428~YAAQnf7UF/pDGUmPAQAAoHp6VhfBunmIKp91P9J8Z5pqzgVxPS+n2hdy9PXVlkPusl7nWiVaFt/6Q0PFRQS61J0unGEgEuFLaCYr2FBaHUI8MO3s0WbM4dkVBNPO2zBTo2q0mUoAqr6O0P/K01w43UCJmwYpmu4OSh8LYnDD1HoAGg8cmp4j11t6gniBY7GMngNa2SzR9sk0w51cn3wNmUU5GAYit9M3lKh/YIqTkbvFqg+2yXhbz63LtAWSGNyWcW6OBG3dKpWjnv6PrpiIEAye3fDwnHboNg5rhzLbe3xjD41MF5X3AuYpsPsBH9LjVWE1GtOBL2R2yVzhzg==~1; ak_bmsc=D53587D6F971E072EE4BE20D158F08AF~000000000000000000000000000000~YAAQnf7UFwtEGUmPAQAAl4J6VhcwlkN1SvmUr+Mgx1T4mSXmwMOHYRkvT1rTtZv7yWziHnC2VARRNxDY26Q8BxxxLheQvoQQod0tA2g5bjfsv5n2+mXeuNv7EUptpDM2SusGs7lbtV5GASvIiHmlp3mh1bvDmVL6mS+SbJQWt1JaYdRPYAf9djodxcWafxJW9mL7l2400o1QAbep3ATeFAkMEPLkj3/QX91q+oQfGWW/Oz2iSBqLAuU3syIXqeYV+oX/vyrnPVjrt/B1nwD6kWxx+eFH88dO4jevc+QZlj1LfmlR54ViMLEpJVMMCVDIclo4fp8vhKu1mKppfMrd07d5o1KA/V7ceoMBs5GynBoqRl0BxKdsK3+aM2hn0BHO4DzyEwQjtdshsH3Vl7zSg7UEg4Gz82SexMMhQJ8s60lY76DNCg/cJY/95R5KQrosj9nOzlpqqbFZgVcmLFakmRkx705tYgJPHDBvS1JSNHw2a2AEYh4g5/EtxEy1; PS=2b44fc7cc22605c8e28990168a4b59ba5ee641aa56500b2fc3f44683ac4836269a86cc384cde9c370d99ad6a3af22255; __gads=ID=7681b693da145931:T=1693917786:RT=1715144565:S=ALNI_MYGUFIytHRJu6efKGhQRm6Xjc4_BQ; __gpi=UID=00000c3c2c1c6eaa:T=1693917786:RT=1715144565:S=ALNI_Mb2aDiQYcwXRwrTGyPsqo3q_ltYxA; __eoi=ID=6833cab4d1039621:T=1715144565:RT=1715144565:S=AA-AfjZocepljJ1hqt4x681nCLKk; nauk_at=eyJraWQiOiIxIiwidHlwIjoiSldUIiwiYWxnIjoiUlM1MTIifQ.eyJkZXZpY2VUeXBlIjoiZDNza3QwcCIsInVkX3Jlc0lkIjoxMjA5MTQyMTMsInN1YiI6IjEyOTU2MTM5NSIsInVkX3VzZXJuYW1lIjoiaGltYW5zaHUubmluamE3QGdtYWlsLmNvbSIsInVkX2lzRW1haWwiOnRydWUsImlzcyI6IkluZm9FZGdlIEluZGlhIFB2dC4gTHRkLiIsInVzZXJBZ2VudCI6Ik1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS8xMTYuMC4wLjAgU2FmYXJpLzUzNy4zNiIsImlwQWRyZXNzIjoiMTAuMjQzLjE3Ni42NCIsInVkX2lzVGVjaE9wc0xvZ2luIjpmYWxzZSwidXNlcklkIjoxMjk1NjEzOTUsInN1YlVzZXJUeXBlIjoiam9ic2Vla2VyIiwidXNlclN0YXRlIjoiQVVUSEVOVElDQVRFRCIsInVkX2VtYWlsVmVyaWZpZWQiOnRydWUsInVkX2lzUGFpZENsaWVudCI6ZmFsc2UsInVzZXJUeXBlIjoiam9ic2Vla2VyIiwic2Vzc2lvblN0YXRUaW1lIjoiMjAyMy0wOC0zMVQxNjoyMDo1NyIsInVkX2VtYWlsIjoiaGltYW5zaHUubmluamE3QGdtYWlsLmNvbSIsInVzZXJSb2xlIjoidXNlciIsImV4cCI6MTcxNTE1MDI1OSwidG9rZW5UeXBlIjoiYWNjZXNzVG9rZW4iLCJpYXQiOjE3MTUxNDY2NTksImp0aSI6IjMwM2MyY2Y1NjQxMjQ3NTNhNDZkMTVhMGJmYWMxM2NjIn0.Z1V_wvWx2w7zP7Jn85OGo9MPBnYXIaXyFQSbwI4C1Gy35bKox1t-_Mw8cUVEo8JIDa9D3c3OwBZNXbwJszXsffutazxj_1vIz8rvNEi_s2XdbV91FntmaRrVmxWwUnkL1oh7MsL9tEp60YIs96VnU9S1o0mr2sOtxoBhlN70nulnudp4HSA20aI2k5MX3vqgLzhkFTKjE3XhFFgs-IF7cnFizZQAOnOKTcjbajCxCaEIQYHJ34fM5w8KyvVj1fl3DDNwHQ8SLY61MK7sLUzl06OavmSruZOAXxEi6N67BYZcPscijsWHARnOiWKBGmdGmv0JdAgqyvD-wAASpFUmmg; is_login=1; __utma=266160400.1792950486.1693479038.1715142163.1715146660.33; __utmb=266160400.3.10.1715146660; ACTIVE=1715147596; HOWTORT=ul=1715149025311&r=https%3A%2F%2Fwww.naukri.com%2Fmnjuser%2Frecommendedjobs&hd=1715149025566; bm_sv=8E61FFA58EED28392C889E28A771779D~YAAQl/7UF5XmsDSPAQAAoznZVhd+1y7oNmk5Zk2EKYYbccKqeHTaG/JmDALH34Kw1m+xFhNZTWNPyUnb+a1GPXHRO5bW1wK6ZNxK3sgjd34X/sCOlbFruXfj47T4fNF1JUSCc6JX8PQA/2acNFQOhyP7nyreaVsXUZBlrx8qf5PuplcfieqBEjhd7LawkRHJUgPHASmPtdJcCvgHQ5HWrOUv5SUHEIxNDVKMNqDv3r3wyZn5LIZhW+7znMuEj34h0A==~1; _ga_K2YBNZVRLL=GS1.1.1715146663.38.1.1715149027.32.0.0; J=0; bm_sv=8E61FFA58EED28392C889E28A771779D~YAAQ3/7UFxCxqFCPAQAA6zPbVhct67OugFlZgNnZI5RUvs3bMffKNc500aIf8eQpimYrps4lfr9S57ktx//MEoHY+Qxb1IO/jgVnb4v/AalNDsz7EYpr3cCnk5nezeuM5HiM2QnWGwt0cgBWiLCk3q4StYVUByy+Krqu1uk8mu1v7qzog4QwA6ZX7iXz+NN60ZxG1eHo8xCSdV9mKT6rXZY/V30RU5Mee0Knnxtrabiw0XABLk1YbNYW4Qs1iFPhfw==~1',
+    'expires': '0',
+    'gid': 'LOCATION,INDUSTRY,EDUCATION,FAREA_ROLE',
+    'origin': 'https://www.naukri.com',
+    'pragma': 'no-cache',
+    'referer': 'https://www.naukri.com/mnjuser/recommendedjobs',
+    'sec-ch-ua': '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'systemid': 'Naukri',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+    'x-requested-with': 'XMLHttpRequest'
+    }
+
+    response = requests.request("POST", url, headers=headers, data=payload)
+
+    response_data=json.loads(response.text)
+    job_id_list=[]
+    for data in response_data["jobDetails"]:
+        job_id=data["jobId"]
+        apply_jobs(job_id)
+        job_id_list.append(job_id)
+    
+    return job_id_list
+
+
+while(True):
+    # recom_jobs()
+    get_job_list()
